@@ -1,17 +1,437 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
-    </head>
-    <body>
-        <h1>hello world</h1>
-    </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Martin Luther King Jr. - Wikipedia</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    </head>
-as;ldkfjas;ldkfjasdf 
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: #202122;
+            background-color: #f8f9fa;
+        }
 
-asdf;lkjsdfh
-asdlfkjhas
-ß
+        header {
+            background-color: white;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #a2a9b1;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0.5rem 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .wiki-logo {
+            font-weight: bold;
+            font-size: 1.5rem;
+            color: #3366cc;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 1rem auto;
+            display: flex;
+            gap: 1rem;
+            padding: 0 1rem;
+        }
+
+        .sidebar {
+            width: 300px;
+            background-color: #f8f9fa;
+        }
+
+        .main-content {
+            flex: 1;
+            background-color: white;
+            padding: 2rem;
+            border: 1px solid #a2a9b1;
+        }
+
+        .infobox {
+            background-color: #f9f9f9;
+            border: 1px solid #a2a9b1;
+            border-radius: 4px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            width: 100%;
+            max-width: 320px;
+            float: right;
+            margin-left: 1rem;
+        }
+
+        .infobox-title {
+            font-size: 1.3rem;
+            font-weight: bold;
+            text-align: center;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid #a2a9b1;
+            margin-bottom: 0.5rem;
+        }
+
+        .infobox-row {
+            display: flex;
+            padding: 0.3rem 0;
+            border-bottom: 1px solid #eaecf0;
+        }
+
+        .infobox-label {
+            font-weight: bold;
+            width: 40%;
+            padding-right: 0.5rem;
+            color: #54595d;
+        }
+
+        .infobox-data {
+            width: 60%;
+        }
+
+        h1 {
+            font-size: 1.8rem;
+            font-weight: normal;
+            padding: 0.25rem 0;
+            border-bottom: 1px solid #a2a9b1;
+            padding-bottom: 0.25rem;
+            margin-bottom: 1rem;
+        }
+
+        h2 {
+            font-size: 1.3rem;
+            font-weight: bold;
+            margin-top: 1.5rem;
+            margin-bottom: 0.5rem;
+            padding-bottom: 0.25rem;
+            border-bottom: 1px solid #a2a9b1;
+        }
+
+        h3 {
+            font-size: 1.1rem;
+            font-weight: bold;
+            margin-top: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        p {
+            margin-bottom: 1rem;
+            text-align: justify;
+        }
+
+        a {
+            color: #3366cc;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        a:visited {
+            color: #5b5bb6;
+        }
+
+        .reference {
+            font-size: 0.9rem;
+            color: #3366cc;
+            vertical-align: super;
+            margin: 0 0.1rem;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+            background-color: #f9f9f9;
+            border: 1px solid #a2a9b1;
+        }
+
+        table th {
+            background-color: #eaecf0;
+            border: 1px solid #a2a9b1;
+            padding: 0.5rem;
+            text-align: left;
+            font-weight: bold;
+        }
+
+        table td {
+            border: 1px solid #a2a9b1;
+            padding: 0.5rem;
+        }
+
+        table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        table tr:nth-child(odd) {
+            background-color: white;
+        }
+
+        .references {
+            margin-top: 2rem;
+            padding-top: 1rem;
+            border-top: 1px solid #a2a9b1;
+            font-size: 0.9rem;
+        }
+
+        .reference-item {
+            margin-bottom: 0.5rem;
+        }
+
+        .external-links {
+            margin-top: 2rem;
+            padding-top: 1rem;
+            border-top: 1px solid #a2a9b1;
+        }
+
+        .external-links li {
+            list-style: none;
+            margin-bottom: 0.3rem;
+        }
+
+        .external-links a {
+            color: #3366cc;
+        }
+
+        .edit-link {
+            color: #3366cc;
+            font-size: 0.85rem;
+            margin-left: 0.5rem;
+        }
+
+        .disambiguation {
+            background-color: #efefef;
+            border-left: 4px solid #3366cc;
+            padding: 0.5rem 1rem;
+            margin-bottom: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+
+            .sidebar {
+                width: 100%;
+            }
+
+            .infobox {
+                float: none;
+                margin-left: 0;
+            }
+
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            h2 {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="wiki-logo">Wikipedia</div>
+            <div style="flex: 1; margin-left: 2rem;">
+                <input type="text" placeholder="Search Wikipedia" style="width: 200px; padding: 0.5rem; border: 1px solid #a2a9b1; border-radius: 2px;">
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="main-content">
+            <h1>Martin Luther King Jr.</h1>
+
+            <div class="Image">
+                <img src="/Users/wayne/Documents/GitHub/week1-wiki-page/images/Martin_Luther_King,_Jr..jpgg" alt="Martin Luther King Jr." width="220" height="275">
+            </div>
+
+            <div class="infobox">
+                <div class="infobox-title">Martin Luther King Jr.</div>
+                <div class="infobox-row">
+                    <div class="infobox-label">Born</div>
+                    <div class="infobox-data">Michael King Jr.<br>January 15, 1929<br><a href="#">Atlanta, Georgia</a></div>
+                </div>
+                <div class="infobox-row">
+                    <div class="infobox-label">Died</div>
+                    <div class="infobox-data">April 4, 1968 (aged 39)<br><a href="#">Memphis, Tennessee</a></div>
+                </div>
+                <div class="infobox-row">
+                    <div class="infobox-label">Nationality</div>
+                    <div class="infobox-data">American</div>
+                </div>
+                <div class="infobox-row">
+                    <div class="infobox-label">Occupation(s)</div>
+                    <div class="infobox-data">Baptist minister, activist</div>
+                </div>
+                <div class="infobox-row">
+                    <div class="infobox-label">Spouse</div>
+                    <div class="infobox-data"><a href="#">Coretta Scott King</a> (m. 1953)</div>
+                </div>
+                <div class="infobox-row">
+                    <div class="infobox-label">Children</div>
+                    <div class="infobox-data">4</div>
+                </div>
+                <div class="infobox-row">
+                    <div class="infobox-label">Awards</div>
+                    <div class="infobox-data"><a href="#">Nobel Peace Prize</a> (1964)</div>
+                </div>
+            </div>
+
+            <p><b>Martin Luther King Jr.</b> (born Michael King Jr.; January 15, 1929 – April 4, 1968) was an American <a href="#">civil rights</a> activist and <a href="#">Baptist</a> minister who was a leader of the <a href="#">civil rights movement</a> from 1955 until <a href="#">his assassination</a> in 1968.<span class="reference">[1]</span> He advanced civil rights for <a href="#">people of color</a> in the United States through the use of <a href="#">nonviolent resistance</a> and <a href="#">civil disobedience</a> against <a href="#">Jim Crow laws</a> and other forms of legalized discrimination.</p>
+
+            <p>A <a href="#">Black church</a> leader, King participated in and led marches for the <a href="#">right to vote</a>, <a href="#">desegregation</a>, <a href="#">labor rights</a>, and other civil rights. He oversaw the 1955 <a href="#">Montgomery bus boycott</a> and was the first president of the <a href="#">Southern Christian Leadership Conference</a> (SCLC), leading the unsuccessful <a href="#">Albany Movement</a> in Albany, Georgia, and helping organize nonviolent 1963 protests in <a href="#">Birmingham, Alabama</a>.</p>
+
+            <p>King was jailed several times. <a href="#">Federal Bureau of Investigation</a> (FBI) director <a href="#">J. Edgar Hoover</a> considered King a radical and made him an object of <a href="#">COINTELPRO</a> from 1963. FBI agents investigated him for possible communist ties, spied on his personal life, and secretly recorded him. In 1964, the FBI mailed King <a href="#">a threatening anonymous letter</a>, which he interpreted as an attempt to make him commit suicide.<span class="reference">[2]</span></p>
+
+            <p>King won the <a href="#">1964 Nobel Peace Prize</a> for combating <a href="#">racial inequality</a> through nonviolent resistance. In his final years, he expanded his focus to economic justice and opposition to the <a href="#">Vietnam War</a>, organizing the <a href="#">Poor People's Campaign</a>, when he was assassinated on April 4 in <a href="#">Memphis, Tennessee</a>.</p>
+
+            <h2>Early life and education <span class="edit-link">[edit]</span></h2>
+
+            <h3>Birth</h3>
+            <p>Michael King Jr. was born on January 15, 1929, in <a href="#">Atlanta</a>, the second of three children of <a href="#">Michael King</a> and <a href="#">Alberta King</a>.<span class="reference">[3]</span> His maternal grandfather, Adam Daniel Williams, was a minister in rural <a href="#">Georgia</a> who became pastor of the <a href="#">Ebenezer Baptist Church</a> in Atlanta in 1894.<span class="reference">[4]</span> His father became assistant pastor of the Ebenezer church shortly after marrying Alberta. In 1934, King Sr. was sent on a multinational trip for the <a href="#">Baptist World Alliance</a> Congress, visiting sites associated with the <a href="#">Reformation</a> leader <a href="#">Martin Luther</a> in Germany.<span class="reference">[5]</span> After returning home in August 1934, Michael Sr. changed his name to Martin Luther King and his five-year-old son's name to Martin Luther King Jr.</p>
+
+            <h3>Early childhood</h3>
+            <p>At his childhood home, Martin Jr. and his two siblings read aloud the <a href="#">Bible</a> as instructed by their father.<span class="reference">[6]</span> His mother Jennie told lively stories from the Bible, and his father regularly used corporal punishment to discipline his children. Martin Jr. memorized <a href="#">hymns</a> and Bible verses by age five.<span class="reference">[7]</span> Beginning at six years old, he attended church events with his mother and sang hymns while she played piano. King garnered a large vocabulary from reading dictionaries and enjoyed opera, playing piano, and singing in his church choir.</p>
+
+            <p>Martin Jr. became friends with a white boy whose father owned a business across the street from his home. In September 1935, when the boys were about six years old, they started school.<span class="reference">[8]</span> King had to attend a school for black children, while his playmate went to a separate school for white children only. Soon afterwards, the parents of the white boy stopped allowing King to play with their son, stating to him, "we are white, and you are colored."<span class="reference">[9]</span> When King relayed this to his parents, they talked with him about the history of <a href="#">slavery</a> and <a href="#">racism in America</a>, which King would later say made him "determined to hate every white person."<span class="reference">[9]</span> His parents instructed him that it was his <a href="#">Christian</a> duty to love everyone.</p>
+
+            <h3>Adolescence</h3>
+            <p>As an adolescent, he initially felt resentment against whites due to the "racial humiliation" that he, his family, and his neighbors often had to endure.<span class="reference">[10]</span> In 1942, when King was 13, he became the youngest assistant manager of a newspaper delivery station for the <a href="#">Atlanta Journal</a>. In the same year, King skipped the <a href="#">ninth grade</a> and enrolled in <a href="#">Booker T. Washington High School</a>, where he maintained a B-plus average.<span class="reference">[11]</span></p>
+
+            <p>Martin Jr. was brought up in a <a href="#">Baptist</a> home; as he entered adolescence he began to question the <a href="#">literalist</a> teachings preached at his father's church.<span class="reference">[12]</span> At the age of 13, he denied the <a href="#">bodily resurrection of Jesus</a> during <a href="#">Sunday school</a>.<span class="reference">[13]</span> In high school, Martin Jr. became known for his public-speaking ability, with a voice that had grown into an orotund <a href="#">baritone</a>.<span class="reference">[14]</span> He joined the school's debate team and chose English and <a href="#">sociology</a> as his main subjects.</p>
+
+            <p>On April 13, 1944, in his <a href="#">junior year</a>, King gave his first public speech during an <a href="#">oratorical contest</a>.<span class="reference">[15]</span> In his speech he stated, "black America still wears chains. The finest negro is at the mercy of the meanest white man."<span class="reference">[16]</span> King was selected as the winner of the contest. On the ride home to Atlanta by bus, he and his teacher were ordered by the driver to stand so that white passengers could sit. The driver called King a "black son-of-a-bitch." King initially refused but complied after his teacher told him that he would be breaking the law if he did not.<span class="reference">[17]</span> Later King wrote of the incident: "That night will never leave my memory. It was the angriest I have ever been in my life."<span class="reference">[17]</span></p>
+
+            <h3>Morehouse College</h3>
+            <p>During King's junior year in high school, <a href="#">Morehouse College</a>—an all-male <a href="#">historically black college</a> that King's father and maternal grandfather had attended—began accepting high school juniors who passed the <a href="#">entrance examination</a>.<span class="reference">[18]</span> As <a href="#">World War II</a> was underway, many black college students had been enlisted, so the university aimed to increase their enrollment by allowing juniors to apply.<span class="reference">[18]</span> In 1944, aged 15, King passed the examination and was enrolled at the university that autumn.</p>
+
+            <p>The summer before King started at Morehouse, he boarded a train with other students to work in <a href="#">Simsbury, Connecticut</a>, at the <a href="#">tobacco farm</a> of Cullman Brothers Tobacco.<span class="reference">[19]</span> This was King's first trip into the <a href="#">integrated</a> north. In a June 1944 letter to his father, King wrote about the differences that struck him: "On our way here we saw some things I had never anticipated to see. After we passed Washington there was no discrimination at all. The white people here are very nice. We go to any place we want to and sit anywhere we want to."<span class="reference">[19]</span></p>
+
+            <p>At Morehouse, King played freshman football. The summer before his last year there, in 1947, the 18-year-old King chose to enter the <a href="#">ministry</a>. He would later credit the college's president, <a href="#">Benjamin Mays</a>, with being his "spiritual mentor."<span class="reference">[20]</span> King had concluded that the church offered the most assuring way to answer "an inner urge to serve humanity", and he made peace with the Baptist Church, as he believed he would be a "rational" minister with sermons that were "a respectful force for ideas, even social protest."<span class="reference">[21]</span> King graduated from Morehouse with a <a href="#">Bachelor of Arts</a> in sociology in 1948, aged nineteen.</p>
+
+            <h2>Religious education <span class="edit-link">[edit]</span></h2>
+
+            <p>King enrolled in <a href="#">Crozer Theological Seminary</a> in <a href="#">Upland, Pennsylvania</a>, and took several courses at the <a href="#">University of Pennsylvania</a>.<span class="reference">[22]</span> At Crozer, King was elected president of the student body. King's father supported his decision to continue his education and made arrangements for King to work with <a href="#">J. Pius Barbour</a>, a family friend and Crozer alumnus who pastored at <a href="#">Calvary Baptist Church</a> in nearby <a href="#">Chester, Pennsylvania</a>.<span class="reference">[23]</span> King became known as one of the "Sons of Calvary", an honor he shared with other ministers who went on to become well-known preachers.</p>
+
+            <p>King graduated with a <a href="#">Bachelor of Divinity</a> in 1951.<span class="reference">[24]</span> He applied to the <a href="#">University of Edinburgh</a> for a doctorate in the <a href="#">School of Divinity</a> but ultimately chose Boston instead.<span class="reference">[25]</span> In 1951, King began doctoral studies in <a href="#">systematic theology</a> at <a href="#">Boston University</a>, and worked as an assistant minister at Boston's historic <a href="#">Twelfth Baptist Church</a>.</p>
+
+            <p>At the age of 25 in 1954, King was <a href="#">called</a> as pastor of the <a href="#">Dexter Avenue Baptist Church</a> in <a href="#">Montgomery, Alabama</a>.<span class="reference">[26]</span> King received his PhD on June 5, 1955.</p>
+
+            <h2>Marriage and family <span class="edit-link">[edit]</span></h2>
+
+            <p>While studying at Boston University, King met a student named <a href="#">Coretta Scott</a>. King married Scott on June 18, 1953, on the lawn of her parents' house, in <a href="#">Heiberger, Alabama</a>.<span class="reference">[27]</span> They had four children: <a href="#">Yolanda King</a> (1955–2007), <a href="#">Martin Luther King III</a> (b. 1957), <a href="#">Dexter Scott King</a> (1961–2024), and <a href="#">Bernice King</a> (b. 1963).<span class="reference">[28]</span></p>
+
+            <h2>Activism and organizational leadership <span class="edit-link">[edit]</span></h2>
+
+            <h3>Montgomery bus boycott, 1955</h3>
+            <p>The <a href="#">Dexter Avenue Baptist Church</a> was influential in the Montgomery African-American community. As the church's pastor, King became known for his oratorical preaching in Montgomery and surrounding region.<span class="reference">[29]</span></p>
+
+            <p>In March 1955, <a href="#">Claudette Colvin</a>—a black schoolgirl in Montgomery—refused to give up her bus seat to a white man in violation of <a href="#">Jim Crow laws</a>.<span class="reference">[30]</span> On December 1, 1955, <a href="#">Rosa Parks</a> was arrested for refusing to give up her seat on a city bus.<span class="reference">[31]</span> These incidents led to the <a href="#">Montgomery bus boycott</a>, which was urged and planned by <a href="#">Edgar Nixon</a> and led by King.<span class="reference">[32]</span></p>
+
+            <p>The boycott lasted for 385 days, and the situation became so tense that King's house was bombed.<span class="reference">[33]</span> King was arrested for traveling 30 mph in a 25 mph zone and jailed, which drew the attention of national media, and increased King's public stature. The controversy ended when the US District Court issued a ruling in <a href="#">Browder v. Gayle</a> that prohibited racial segregation on Montgomery public buses.<span class="reference">[34]</span></p>
+
+            <p>King's role in the bus boycott transformed him into a national figure and the best-known spokesman of the civil rights movement.<span class="reference">[35]</span></p>
+
+            <h3>Birmingham campaign, 1963</h3>
+            <p>In early 1963, King led the <a href="#">Birmingham campaign</a>, a nonviolent movement to oppose segregation and discrimination in one of America's most racially divided cities. King was arrested and jailed early in the campaign—his 13th arrest out of 29.<span class="reference">[36]</span> From his cell, he composed the now-famous "<a href="#">Letter from Birmingham Jail</a>" that responds to calls to pursue legal channels for social change. The letter has been described as "one of the most important historical documents penned by a modern <a href="#">political prisoner</a>".<span class="reference">[37]</span></p>
+
+            <h3>March on Washington, 1963</h3>
+            <p>On August 28, 1963, King participated in the <a href="#">March on Washington</a> for Jobs and Freedom. As the final speaker, King delivered his famous "I Have a Dream" speech from the steps of the <a href="#">Lincoln Memorial</a> to a crowd of approximately 250,000 people. In the speech, King eloquently articulated his vision of racial harmony and equality.</p>
+
+            <h3>Nobel Peace Prize</h3>
+            <p>On October 14, 1964, King became the youngest winner of the <a href="#">Nobel Peace Prize</a>, which was awarded to him for leading nonviolent resistance to racial prejudice in the U.S.<span class="reference">[38]</span> In 1965, he was awarded the American Liberties Medallion by the <a href="#">American Jewish Committee</a>.</p>
+
+            <h3>Opposition to the Vietnam War</h3>
+            <p>King was long opposed to <a href="#">American involvement in the Vietnam War</a>, but at first avoided the topic in speeches to avoid interference with civil rights goals.<span class="reference">[39]</span> On April 15, 1967, King spoke at an anti-war march from Manhattan's Central Park to the UN, bringing up issues of civil rights and the draft.<span class="reference">[40]</span></p>
+
+            <h2>Assassination and aftermath <span class="edit-link">[edit]</span></h2>
+
+            <p>On March 29, 1968, King went to <a href="#">Memphis, Tennessee</a>, in support of the black <a href="#">sanitation workers</a>, who were on strike for higher wages and better treatment. On April 4, 1968, King was assassinated by <a href="#">James Earl Ray</a> at the <a href="#">Lorraine Motel</a>.<span class="reference">[41]</span> King's death led to <a href="#">riots in US cities</a>.</p>
+
+            <p>Just days after King's assassination, Congress passed the <a href="#">Civil Rights Act of 1968</a>.<span class="reference">[42]</span> King was posthumously awarded the <a href="#">Presidential Medal of Freedom</a> in 1977 and <a href="#">Congressional Gold Medal</a> in 2004.</p>
+
+            <h2>Awards and recognition <span class="edit-link">[edit]</span></h2>
+
+            <p>King has become an icon in the history of <a href="#">American liberalism</a> and <a href="#">American progressivism</a>.<span class="reference">[43]</span> Beginning in 1971, cities and states established annual holidays to honor King. On November 2, 1983, President <a href="#">Ronald Reagan</a> signed a bill creating a federal holiday to honor King. Observed for the first time on January 20, 1986, it is called <a href="#">Martin Luther King Jr. Day</a>.<span class="reference">[44]</span></p>
+
+            <p>King was second in <a href="#">Gallup's List of Most Widely Admired People of the 20th Century</a>.<span class="reference">[45]</span> In 1963, he was named <a href="#">Time Person of the Year</a>, and, in 2000, he was voted sixth in an online "Person of the Century" poll by the same magazine.</p>
+
+            <h2>References <span class="edit-link">[edit]</span></h2>
+
+            <div class="references">
+                <div class="reference-item"><span class="reference">[1]</span> ^ Jump up <a href="#">"Civil rights movement"</a>. Wikipedia. Retrieved 2024.</div>
+                <div class="reference-item"><span class="reference">[2]</span> ^ Jump up <a href="#">"FBI–King letter"</a>. Wikipedia. Retrieved 2024.</div>
+                <div class="reference-item"><span class="reference">[3]</span> Jump up <a href="#">"Martin Luther King Jr."</a>. Biography.com. Retrieved 2024.</div>
+                <div class="reference-item"><span class="reference">[4]</span> Jump up <a href="#">"Ebenezer Baptist Church"</a>. Wikipedia. Retrieved 2024.</div>
+                <div class="reference-item"><span class="reference">[5]</span> Jump up <a href="#">"Baptist World Alliance"</a>. Wikipedia. Retrieved 2024.</div>
+                <div class="reference-item"><span class="reference">[6]</span> Jump up <a href="#">"Early Life of MLK"</a>. Stanford University. Retrieved 2024.</div>
+                <div class="reference-item"><span class="reference">[7]</span> Jump up <a href="#">"Martin Luther King Jr. Childhood"</a>. History.com. Retrieved 2024.</div>
+                <div class="reference-item"><span class="reference">[8]</span> Jump up <a href="#">"Atlanta University Laboratory School"</a>. Wikipedia. Retrieved 2024.</div>
+                <div class="reference-item"><span class="reference">[9]</span> ^ Jump up <a href="#">"Racism in America"</a>. Wikipedia. Retrieved 2024.</div>
+                <div class="reference-item"><span class="reference">[10]</span> Jump up <a href="#">"Adolescence of MLK"</a>. Stanford University. Retrieved 2024.</div>
+                <div class="reference-item"><span class="reference">[11]</span> Jump up <a href="#">"Booker T. Washington High School"</a>. Wikipedia. Retrieved 2024.</div>
+                <div class="reference-item"><span class="reference">[12]</span> Jump up <a href="#">"Baptist Church"</a>. Wikipedia. Retrieved 2024.</div>
+                <div class="reference-item"><span class="reference">[13]</span> Jump up <a href="#">"Religious Development"</a>. Stanford University. Retrieved 2024.</div>
+                <div class="reference-item"><span class="reference">[14]</span> Jump up <a href="#">"Public Speaking"</a>. History.com. Retrieved 2024.</div>
+                <div class="reference-item"><span class="reference">[15]</span> Jump up <a href="#">"Oratorical Contest 1944"</a>. Stanford University. Retrieved 2024.</div>
+                <div class="reference-item"><span class="reference">[16]</span> Jump up <a href="#">"MLK Speech Quote"</a>. History.com. Retrieved 2024.</div>
+                <div class="reference-item"><span class="reference">[17]</span> ^ Jump up <a href="#">"Bus Incident 1944"</a>. Stanford University. Retrieved 2024.</div>
+                <div class="reference-item"><span class="reference">[18]</span> ^ Jump up <a href="#">"Morehouse College"</a>. Wikipedia. Retrieved 2024.</div>
+                <div class="reference-item"><span class="reference">[19]</span> ^ Jump up <a href="#">"Connecticut Summer 1944"</a>. Stanford University. Retrieved 2024.</div>
+                <div class="reference-item"><span class="reference">[20]</span> Jump up <a href="#">"Benjamin Mays"</a>. Wikipedia. Retrieved 2024.</div>
+                <div class="reference-item"><span class="reference">[21]</span> Jump up <a href="#">"Ministry Choice"</a>. Stanford University. Retrieved 2024.</div>
+                <div class="reference-item"><span class="reference">[22]</span> Jump up <a href="#">"Crozer Theological Seminary"</a>. Wikipedia. Retrieved 2024.</div>
+                <div class="reference-item"><span class="reference">[23]</span> Jump up <a href="#">"Calvary Baptist Church"</a>. Wikipedia. Retrieved 2024.</div>
+                <div class="reference-item"><span class="reference">[24]</span> Jump up <a href="#">"Divinity Degree"</a>. Stanford University. Retrieved 2024.</div>
+                <div class="reference-item"><span class="reference">[25]</span> Jump up <a href="#">"Boston University"</a>. Wikipedia. Retrieved 2024.</div>
+                <div class="reference-item"><span class="reference">[26]</span> Jump up <a href="#">"Dexter Avenue Baptist Church"</a>. Wikipedia. Retrieved 2024.</div>
+                <div class="reference-item"><span class="reference">[27]</span> Jump up <a href="#">"Marriage to Coretta Scott"</a>. History.com. Retrieved 2024.</div>
+                <div class="reference-item"><span class="reference">[28]</span> Jump up <a href="#">"Children of MLK"</a>. Wikipedia. Retrieved 2024.</div>
+                <div class="reference-item"><span class="reference">[29]</span> Jump up <a href="#">"Dexter Avenue Ministry"</a>. Stanford University. Retrieved 2024.</div>
+                <div class="reference-item"><span class="reference">[30]</span> Jump up <a href="#">"Claudette Colvin"</a>. Wikipedia. Retrieved 2024.</div>
+                <div class="reference-item"><span class="reference">[31]</span> Jump up <a href="#">"Rosa Parks"</a>. Wikipedia. Retrieved 2024.</div>
+                <div class="reference-item"><span class="reference">[32]</span> Jump up <a href="#">"Montgomery Bus Boycott"</a>. Wikipedia. Retrieved 2024.</div>
+                <div class="reference-item"><span class="reference">[33]</span> Jump up <a href="#">"King's House Bombed"</a>. History.com. Retrieved 2024.</div>
+                <div class="reference-item"><span class="reference">[34]</span> Jump up <a href="#">"Browder v. Gayle"</a>. Wikipedia. Retrieved 2024.</div>
+                <div class="reference-item"><span class="reference">[35]</span> Jump up <a href="#">"Civil Rights Leader"</a>. History.com. Retrieved 2024.</div>
+                <div class="reference-item"><span class="reference">[36]</span> Jump up <a href="#">"Birmingham Campaign"</a>. Wikipedia. Retrieved 2024.</div>
+                <div class="reference-item"><span class="reference">[37]</span> Jump up <a href="#">"Letter from Birmingham Jail"</a>. Wikipedia. Retrieved 2024.</div>
+                <div class="reference-item"><span class="reference">[38]</span> Jump up <a href="#">"Nobel Peace Prize 1964"</a>. Wikipedia. Retrieved 2024.</div>
+                <div class="reference-item"><span class="reference">[39]</span> Jump up <a href="#">"Vietnam War Opposition"</a>. Wikipedia. Retrieved 2024.</div>
+                <div class="reference-item"><span class="reference">[40]</span> Jump up <a href="#">"Anti-War March 1967"</a>. History.com. Retrieved 2024.</div>
+                <div class="reference-item"><span class="reference">[41]</span> Jump up <a href="#">"MLK Assassination"</a>. Wikipedia. Retrieved 2024.</div>
+                <div class="reference-item"><span class="reference">[42]</span> Jump up <a href="#">"Civil Rights Act of 1968"</a>. Wikipedia. Retrieved 2024.</div>
+                <div class="reference-item"><span class="reference">[43]</span> Jump up <a href="#">"American Progressivism"</a>. Wikipedia. Retrieved 2024.</div>
+                <div class="reference-item"><span class="reference">[44]</span> Jump up <a href="#">"Martin Luther King Jr. Day"</a>. Wikipedia. Retrieved 2024.</div>
+                <div class="reference-item"><span class="reference">[45]</span> Jump up <a href="#">"Most Admired People"</a>. Gallup. Retrieved 2024.</div>
+            </div>
+
+            <h2>External links <span class="edit-link">[edit]</span></h2>
+
+            <ul class="external-links">
+                <li><a href="http://www.thekingcenter.org/">The King Center</a></li>
+                <li><a href="https://kinginstitute.stanford.edu/">The Martin Luther King, Jr. Research and Education Institute</a></li>
+                <li><a href="http://www.nobelprize.org/nobel_prizes/peace/laureates/1964/">Nobel Peace Prize 1964</a></li>
+            </ul>
+
+            <hr style="margin-top: 2rem; border: none; border-top: 1px solid #a2a9b1;">
+            <p style="font-size: 0.85rem; color: #666; margin-top: 1rem;">This page was last edited on February 7, 2024, at 10:00 (UTC). Text is available under the <a href="#">Creative Commons Attribution-ShareAlike 4.0 License</a>.</p>
+        </div>
+    </div>
+</body>
+</html>
